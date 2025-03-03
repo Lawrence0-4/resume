@@ -1,0 +1,178 @@
+/* Base Styles */
+body {
+    font-family: "century", sans-serif;
+    font-size: 1.1rem;
+    margin: 12;
+    padding: 10;
+    box-sizing: border-box;
+    background-color: rgb(237, 69, 195); /* Light gray background */
+    color: #000000; /* Black text */
+}
+
+h1, h2, h3 {
+    margin: 0;
+    padding: 0;
+}
+
+/* Header Styles */
+header {
+    background: #000000; /* Black background */
+    color: #ffffff; /* White text */
+    height: 100vh; /* Set height to 100% of the viewport height */
+    display: flex; /* Use flexbox for alignment */
+    flex-direction: column; /* Stack items vertically */
+    justify-content: center; /* Center items vertically */
+    align-items: center; /* Center items horizontally */
+    text-align: center; /* center text */
+    position: relative; /* Position relative for absolute positioning of nav */
+    box-shadow: 5px 5px rgba(11, 3, 251, 0.847); /* Add shadow to the header */
+    transition: background 0.3s ease; /* Smooth transition for background */
+}
+
+header:hover {
+    background: #12123e; /* Dark gray on hover */
+}
+
+.about_me {
+    height: auto; /* Maintain aspect ratio */
+    width: 500%;
+    background: #abab2f;
+}
+
+.profile-pic {
+    display: block; /* Make the image a block element */
+    margin: 20px auto; /* Center the image horizontally */
+    width: 150px; /* Set width to 150px */
+    height: 150px; /* Set height to 150px to match width */
+    border-radius: 50%; /* Make the image circular */
+    border: 3px solid #000000; /* Black border */
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2); /* Add shadow */
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease; /* Smooth transitions */
+}
+
+.profile-pic:hover {
+    transform: scale(1.1); /* Slightly enlarge on hover */
+    box-shadow: 0 8px 10px rgba(26, 1, 253, 0.738); /* Increase shadow on hover */
+    border-color: #1900ff; /* Change border color to light blue on hover */
+}
+
+/* Navigation Styles */
+nav {
+    position: absolute; /* Position nav absolutely */
+    top: 5px; /* Distance from the top */
+    right: 5px; /* Distance from the right */
+    display: flex;
+}   
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0; /* Remove default margin */
+}    
+
+nav ul li {
+    display: inline; /* Display list items inline */
+    margin: 0 10; /* Space between items */
+}
+
+nav ul li a {
+    display: flex;
+    list-style: none;
+    margin: 25px 0px;
+    color: #e1e7e8; /* White text */
+    text-decoration: none;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: #f55128; /* Light gray on hover */
+    transform: scale(1.1); /* Slightly enlarge on hover */
+    font-family: century;
+    font-size: 1.1rem;
+    font-weight: bold;
+}
+
+/* Section Styles */
+section {
+    padding: 150px;
+    margin: 150px auto;
+    max-width: 850px;
+    height: 500%; /* Set height 500% of the section */
+    background: #46d5e8; /* White background for sections */
+    border-radius: 80px;
+    box-shadow: 150px rgba(136, 115, 232, 0.795);
+    opacity: 0; /* Start hidden for fade-in effect */
+    transform: translateY(5px); /* Start slightly lower for effect */
+    transition: opacity 0.5s ease, transform 0.5s ease; /* Transition for fade-in */
+    border-color: rgba(26, 1, 253, 0.738); /* Increase shadow on hover */
+}
+
+section.visible {
+    opacity: 1; /* show the visible */
+    transform: translateY(0); /* Move to original position */
+}
+
+section:hover {
+    box-shadow: 0 50px 50px rgba(0, 0, 0, 0.2); /* Increase shadow on hover */
+    transform: translateY(-5px); /* Slightly lift on hover */
+}
+
+/* Project Grid Styles */
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Responsive grid */
+    gap: 20px; /* Space between grid items */
+} 
+
+.project {
+    background: #e1e5e6; /* Light gray background for project items */
+    padding: 20px;
+    border-radius: 50px;
+    box-shadow: 0 5px 15px rgba(211, 90, 224, 0.705);
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transitions */
+}
+
+.project:hover {
+    transform: scale(1.05); /* Slightly enlarge on hover */
+    box-shadow: 0 10px 10px #f3101069; /* Increase shadow on hover */
+    display: flex;
+}
+
+/* Footer Styles */
+footer {
+    text-align: center;
+    padding: 30px 5;
+    background: #000; /* Black footer */
+    color: #fff; /* White text */
+}
+
+/* Shooting Stars Styles */
+.shooting-stars {
+    position: absolute; /* Position absolutely within the header */
+    top: 0; /* Align to the top */
+    left: 0; /* Align to the left */
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    pointer-events: none; /* Allow clicks to pass through */
+    overflow: hidden; /* Hide overflow */
+}
+
+.star {
+    position: absolute;
+    width: 2px;
+    height: 2px;
+    background: rgb(245, 243, 243);
+    border -radius: 50%;
+    animation: shooting 1s linear infinite;
+}
+
+@keyframes shooting {
+    0% {
+        transform: translateY(0) translateX(0);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(100vh) translateX(-100vw);
+        opacity: 0;
+    }
+}
